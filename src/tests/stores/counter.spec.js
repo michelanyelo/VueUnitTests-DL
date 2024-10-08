@@ -11,7 +11,18 @@ describe("useCounter", () => {
     it("Contador inicial en 0", () => {
         const counterStore = useCounterStore()
 
-        expect(counterStore.count).toEqual(0)
+        expect(counterStore.count).toBe(0)
+    })
+
+    // Probar la funcionalidad de incremento del contador.
+    it("El contador aumenta", () => {
+        const counterStore = useCounterStore()
+
+        counterStore.increment()
+        expect(counterStore.count).toBe(1)
+
+        counterStore.decrement()
+        expect(counterStore.count).toBe(0)
     })
 
 })
